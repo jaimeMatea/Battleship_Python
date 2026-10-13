@@ -27,18 +27,18 @@ def iniciar():
         esloras=[2,2,2,3,3,4]
 
         # Creación barcos iniciales j1
-        # for i in esloras:
-        #     tablero1,barco1=crea_barco_aleatorio_j1(tablero1,i,dict_barcos_j1,jugador1)
-        #     barco_eslora=[i,barco1]
-        #     barcos_j1.append(barco_eslora)
-        # time.sleep(2)
-        # os.system("cls")
-
-        #CREACION BARCOS J1 PRUEBA
         for i in esloras:
-            tablero1,barco1=crea_barco_aleatorio(tablero1,i,dict_barcos_j1)
+            tablero1,barco1=crea_barco_aleatorio_j1(tablero1,i,dict_barcos_j1,jugador1)
             barco_eslora=[i,barco1]
             barcos_j1.append(barco_eslora)
+        time.sleep(2)
+        #os.system("cls")
+
+        # CREACION BARCOS J1 PRUEBA
+        # for i in esloras:
+        #     tablero1,barco1=crea_barco_aleatorio(tablero1,i,dict_barcos_j1)
+        #     barco_eslora=[i,barco1]
+        #     barcos_j1.append(barco_eslora)
 
         # Creación barcos iniciales j2
         for i in esloras:
@@ -64,7 +64,7 @@ def iniciar():
 
         while True:
             print(f"""\n⚔️   TURNO DE {jugador1.upper()} ⚔️\n**********************""")
-            imprimir_tablero_color(tablero2)
+            #imprimir_tablero_color(tablero2)
 
             x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
             x1=comprueba_coordenada_x(x1,jugador1,tablero1)
@@ -73,6 +73,7 @@ def iniciar():
                 time.sleep(2)
                 print("Partida cancelada\n")
                 break
+            x1=int(x1)
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al  {tablero1.shape[1]}): ")
             y1=comprueba_coordenada_y(y1,jugador1,tablero1)
             if y1=="salir":
@@ -80,7 +81,7 @@ def iniciar():
                 time.sleep(2)
                 print("Partida cancelada\n")
                 break
-
+            y1=int(y1)
             disparo_j1=recibir_disparo(tablero2,(x1-1,y1-1),dict_barcos_j2,barcos_j2,jugador1)
     
             while disparo_j1==False and (tablero2[x1-1,y1-1]=="X" or tablero2[x1-1,y1-1]=="-"):
@@ -92,13 +93,18 @@ def iniciar():
                 y1=comprueba_coordenada_y(y1,jugador1,tablero1)
                 if y1=="salir":
                     break
-                disparo_j1=recibir_disparo(tablero2,(x1-1,y1-1),dict_barcos_j2,barcos_j2,jugador1)
+                if x1!="salir" or y1!="salir":
+                    x1=int(x1)
+                    y1=int(y1)
+                    disparo_j1=recibir_disparo(tablero2,(x1-1,y1-1),dict_barcos_j2,barcos_j2,jugador1)
             if x1=="salir" or y1=="salir":
                 print("Saliendo de la partida...")
                 time.sleep(2)
                 print("Partida cancelada\n")
                 break
 
+            x1=int(x1)
+            y1=int(y1)
             if disparo_j1 and tablero2[(x1-1,y1-1)]=="X":
                 num_x_1+=1
                 tablero1_marcar[(x1-1,y1-1)]="X"
@@ -190,9 +196,10 @@ def iniciar():
 
 
 
-# Menu (def?) -> hacer que se pueda salir en cualquier momento   con esc??
-# Hacer ReadMe
 
+
+# Hacer ReadMe
+# Menu (def?) -> hacer que se pueda salir en cualquier momento   con esc?? ✅
 # Meter los barcos por teclado (decir la posicion inicial y la direccion) ✅
 # Poner las casillas golpeadas? en otro color (rojo?) ✅
 # Que si gana el jugador 1, no haga su turno igualmente el jugador 2 ✅
@@ -204,12 +211,3 @@ def iniciar():
 
 if __name__ == "__main__":
     iniciar()
-
-
-
-
-# if keyboard.is_pressed('esc'):
-#     print("Saliendo de la partida...")
-#     time.sleep(2)
-#     print("Partida cancelada")
-#     break
