@@ -20,7 +20,7 @@ def imprimir_tablero_color(tablero):
 def menu():
     print("""
     ╔════════════════════════════╗
-    ║     JUEGO DEL AHORCADO     ║
+    ║     HUNDIR LA FLOTA        ║
     ╚════════════════════════════╝
 
     [1] 🎮 COMENZAR BATALLA

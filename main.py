@@ -32,7 +32,8 @@ def iniciar():
             barco_eslora=[i,barco1]
             barcos_j1.append(barco_eslora)
         time.sleep(3)
-        os.system("cls")
+        #os.system("cls")
+        os.system("cls" if os.name == "nt" else "clear")
 
         # Creación barcos iniciales j2
         for i in esloras:
@@ -40,14 +41,8 @@ def iniciar():
             barco_eslora=[i,barco2]
             barcos_j2.append(barco_eslora)
 
-        #Listas con todas las coordenadas de los tableros
-        coordenadas_j1=[]
+        #Lista con todas las coordenadas del tablero del jugador 2
         coordenadas_j2=[]
-
-        for i in range(np.shape(tablero1)[0]):
-            for j in range(np.shape(tablero1)[1]):
-                coordenadas_j1.append((i,j))
-                
         for i in range(np.shape(tablero2)[0]):
             for j in range(np.shape(tablero2)[1]):
                 coordenadas_j2.append((i,j))
@@ -144,7 +139,8 @@ def iniciar():
                 break
 
             time.sleep(3)
-            os.system("cls")
+            #os.system("cls")
+            os.system("cls" if os.name == "nt" else "clear")
         
         
         if sum(dict_barcos_j2.values())==0:
@@ -171,7 +167,10 @@ if __name__ == "__main__":
 
 
 
-
+#coordenadas_j1=[]
+# for i in range(np.shape(tablero1)[0]):
+#     for j in range(np.shape(tablero1)[1]):
+#         coordenadas_j1.append((i,j))
 
 
 # CREACION BARCOS J1 PRUEBA
