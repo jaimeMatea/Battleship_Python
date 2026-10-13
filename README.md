@@ -1,8 +1,8 @@
-# 🚢 Battleship Python (Hundir la Flota)
+# Battleship Python (Hundir la Flota)
 
 Juego de **Hundir la Flota** para la terminal, desarrollado en Python. Juegas contra la máquina en un tablero de 10x10: colocas tus barcos, disparas por coordenadas e intentas hundir toda la flota enemiga antes de que ella hunda la tuya.
 
-## 📋 Características
+## Características
 
 - Tablero de **10x10** con visualización en la terminal mediante emojis.
 - Colocación **manual** de tus barcos (fila, columna y orientación).
@@ -15,7 +15,7 @@ Juego de **Hundir la Flota** para la terminal, desarrollado en Python. Juegas co
 - Marcador de puntos (impactos) para cada jugador.
 - Radar que muestra solo tus disparos sobre el tablero enemigo.
 
-## 🗂️ Estructura del proyecto
+## Estructura del proyecto
 
 ```
 Battleship_Python/
@@ -24,12 +24,12 @@ Battleship_Python/
 └── README.md    # Este archivo
 ```
 
-## ⚙️ Requisitos
+## Requisitos
 
 - **Python 3.8** o superior
 - **NumPy**
 
-## 🚀 Instalación y ejecución
+## Instalación y ejecución
 
 1. Clona el repositorio:
    ```bash
@@ -56,7 +56,7 @@ Battleship_Python/
 
 > 💡 Se recomienda usar una terminal con soporte para emojis y colores ANSI (Windows Terminal, terminal de VS Code, etc.).
 
-## 🎮 Cómo se juega
+## Cómo se juega
 
 ### 1. Menú principal
 Al iniciar aparece el menú:
@@ -92,7 +92,7 @@ Gana quien hunda antes todos los barcos del rival. Al terminar, vuelves al menú
 
 Para cancelar una partida en curso, escribe `salir` al pedir una coordenada.
 
-## 🌊 Leyenda del tablero
+## Leyenda del tablero
 
 | Símbolo interno | Emoji | Significado               |
 |:---------------:|:-----:|---------------------------|
@@ -101,7 +101,7 @@ Para cancelar una partida en curso, escribe `salir` al pedir una coordenada.
 | `X`             |  🔥   | Barco tocado              |
 | `-`             |  💦   | Disparo fallado (agua)    |
 
-## 🧩 Funciones principales (`utils.py`)
+## Funciones principales (`utils.py`)
 
 | Función | Descripción |
 |---------|-------------|
@@ -114,13 +114,13 @@ Para cancelar una partida en curso, escribe `salir` al pedir una coordenada.
 | `comprueba_coordenada_x/y(...)` | Valida que las coordenadas estén dentro del tablero. |
 | `dic_barcos(...)` | Lleva la cuenta de los barcos de cada tipo. |
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - Python
 - NumPy
 - Módulos estándar: `random`, `time`, `os`
 
-## 📌 Posibles mejoras
+## Posibles mejoras
 
 - Que la IA dispare de forma más inteligente (cerca de un impacto).
 - Gestionar entradas no numéricas en el menú y en las coordenadas sin que el programa se detenga, así como pulsar en otras teclas como Enter
