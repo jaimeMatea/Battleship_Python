@@ -105,10 +105,10 @@ Para cancelar una partida en curso, escribe `salir` al pedir una coordenada.
 
 | Función | Descripción |
 |---------|-------------|
-| `menu()` | Muestra el menú principal y devuelve la opción elegida. |
-| `imprimir_tablero_color(tablero)` | Imprime el tablero con emojis. |
-| `crea_barco_aleatorio(...)` | Coloca un barco de forma aleatoria (máquina). |
-| `crea_barco_aleatorio_j1(...)` | Pide al jugador la posición y orientación de cada barco. |
+| `menu()` | Muestra el menú principal y devuelve la opción elegida |
+| `imprimir_tablero_color(tablero)` | Imprime el tablero con emojis |
+| `crea_barco_aleatorio(...)` | Coloca un barco de forma aleatoria (máquina) |
+| `crea_barco_aleatorio_j1(...)` | Pide al jugador la posición y orientación de cada barco |
 | `coloca_barco_plus(tablero, barco)` | Comprueba que el barco cabe y no choca; devuelve el tablero actualizado o `False`. |
 | `recibir_disparo(...)` | Procesa un disparo: agua, tocado o hundido. |
 | `comprueba_coordenada_x/y(...)` | Valida que las coordenadas estén dentro del tablero. |
@@ -122,11 +122,7 @@ Para cancelar una partida en curso, escribe `salir` al pedir una coordenada.
 
 ## 📌 Posibles mejoras
 
-- Mostrar el radar de la máquina o que la IA dispare de forma más inteligente (cerca de un impacto).
-- Gestionar entradas no numéricas en el menú y en las coordenadas sin que el programa se detenga.
+- Que la IA dispare de forma más inteligente (cerca de un impacto).
+- Gestionar entradas no numéricas en el menú y en las coordenadas sin que el programa se detenga, así como pulsar en otras teclas como Enter
 - Permitir elegir el tamaño del tablero.
 - Modo de dos jugadores humanos.
-
-## 👤 Autor
-
-Proyecto realizado como práctica de Python. ¡Gracias por jugar! ⚓

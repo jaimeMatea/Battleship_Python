@@ -27,7 +27,7 @@ def menu():
         
     [2] ❌ SALIR DEL JUEGO
 
-    \x1B[3m-Escribe la palabrea 'salir' en cualquier momento para cancelar la partida y volver al menú-\x1B[0m
+    \x1B[3m-Escribe la palabra 'salir' al escribir una coordenada-\x1B[0m
     """)
     entrada=int(input(""))
     print("\n")
