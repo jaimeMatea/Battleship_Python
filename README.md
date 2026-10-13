@@ -1,3 +1,4 @@
+![imagen](./hundir-la-flota-2.jpg)
 # Battleship Python (Hundir la Flota)
 
 Juego de **Hundir la Flota** para la terminal, desarrollado en Python. Juegas contra la máquina en un tablero de 10x10: colocas tus barcos, disparas por coordenadas e intentas hundir toda la flota enemiga antes de que ella hunda la tuya.
