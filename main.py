@@ -31,21 +31,14 @@ def iniciar():
             tablero1,barco1=crea_barco_aleatorio_j1(tablero1,i,dict_barcos_j1,jugador1)
             barco_eslora=[i,barco1]
             barcos_j1.append(barco_eslora)
-        time.sleep(2)
-        #os.system("cls")
-
-        # CREACION BARCOS J1 PRUEBA
-        # for i in esloras:
-        #     tablero1,barco1=crea_barco_aleatorio(tablero1,i,dict_barcos_j1)
-        #     barco_eslora=[i,barco1]
-        #     barcos_j1.append(barco_eslora)
+        time.sleep(3)
+        os.system("cls")
 
         # Creación barcos iniciales j2
         for i in esloras:
             tablero2,barco2=crea_barco_aleatorio(tablero2,i,dict_barcos_j2)
             barco_eslora=[i,barco2]
             barcos_j2.append(barco_eslora)
-
 
         #Listas con todas las coordenadas de los tableros
         coordenadas_j1=[]
@@ -76,6 +69,7 @@ def iniciar():
             x1=int(x1)
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al  {tablero1.shape[1]}): ")
             y1=comprueba_coordenada_y(y1,jugador1,tablero1)
+            print("\n")
             if y1=="salir":
                 print("Saliendo de la partida...")
                 time.sleep(2)
@@ -87,10 +81,12 @@ def iniciar():
             while disparo_j1==False and (tablero2[x1-1,y1-1]=="X" or tablero2[x1-1,y1-1]=="-"):
                 x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
                 x1=comprueba_coordenada_x(x1,jugador1,tablero1)
+                print("\n")
                 if x1=="salir":
                     break
                 y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
                 y1=comprueba_coordenada_y(y1,jugador1,tablero1)
+                print("\n")
                 if y1=="salir":
                     break
                 if x1!="salir" or y1!="salir":
@@ -119,40 +115,14 @@ def iniciar():
             if sum(dict_barcos_j2.values())==0:
                 break
 
-
-            # #CODIGO JUGADOR 1 PRUEBA RAPIDA
-            # coordenada_j1=random.choice(coordenadas_j1)
-            # coordenadas_j1.remove(coordenada_j1)
-
-            # x1=coordenada_j1[0]
-            # y1=coordenada_j1[1]
-
-            # disparo_j1 = recibir_disparo(tablero2,(x1,y1),dict_barcos_j2,barcos_j2,jugador1)
-
-            # if disparo_j1 and tablero2[(x1,y1)]=="X":
-            #     num_x_1+=1
-            #     tablero1_marcar[(x1,y1)]="X"
-
-            # if disparo_j1 and tablero2[(x1,y1)]=="-":
-            #     tablero1_marcar[(x1,y1)]="-"
-
-            # print(f"Puntos del jugador 1: {num_x_1}\n\n")
-            # print("Radar del jugador 2:")
-            # imprimir_tablero_color(tablero1_marcar)
-
-            # if sum(dict_barcos_j2.values())==0:
-            #     break
-
             
 
             time.sleep(2)
             #os.system("cls")
 
 
-
         
             print(f"""\n⚔️   TURNO DEL JUGADOR 2 ⚔️\n************************""")
-            #print(tablero1)
             coordenada_j2=random.choice(coordenadas_j2)
             coordenadas_j2.remove(coordenada_j2)
 
@@ -169,16 +139,13 @@ def iniciar():
                 tablero2_marcar[(x2,y2)]="-"
 
             print(f"Puntos del jugador 2: {num_x_2}\n\n")
-            #print("Radar del jugador 1:")
-            #print(tablero2_marcar)
 
             if sum(dict_barcos_j1.values())==0:
                 break
 
-            time.sleep(2)
-            #os.system("cls")
+            time.sleep(3)
+            os.system("cls")
         
-
         
         if sum(dict_barcos_j2.values())==0:
             print(f"{jugador1} ha ganado\n")
@@ -194,20 +161,46 @@ def iniciar():
         print("Juego finalizado")
 
 
-
-
-
-
-# Hacer ReadMe
-# Menu (def?) -> hacer que se pueda salir en cualquier momento   con esc?? ✅
-# Meter los barcos por teclado (decir la posicion inicial y la direccion) ✅
-# Poner las casillas golpeadas? en otro color (rojo?) ✅
-# Que si gana el jugador 1, no haga su turno igualmente el jugador 2 ✅
-# No poder meter coordenadas mal ✅
-# Que la maquina no pueda disparar en el mismo sitio ✅
-# Arreglar lo de las coordenadas en la maquina es de 1-9? y la persona 1-10? ✅
-
-
-
 if __name__ == "__main__":
     iniciar()
+
+
+
+
+
+
+
+
+
+
+
+# CREACION BARCOS J1 PRUEBA
+# for i in esloras:
+#     tablero1,barco1=crea_barco_aleatorio(tablero1,i,dict_barcos_j1)
+#     barco_eslora=[i,barco1]
+#     barcos_j1.append(barco_eslora)
+
+
+
+# #CODIGO JUGADOR 1 PRUEBA RAPIDA
+# coordenada_j1=random.choice(coordenadas_j1)
+# coordenadas_j1.remove(coordenada_j1)
+
+# x1=coordenada_j1[0]
+# y1=coordenada_j1[1]
+
+# disparo_j1 = recibir_disparo(tablero2,(x1,y1),dict_barcos_j2,barcos_j2,jugador1)
+
+# if disparo_j1 and tablero2[(x1,y1)]=="X":
+#     num_x_1+=1
+#     tablero1_marcar[(x1,y1)]="X"
+
+# if disparo_j1 and tablero2[(x1,y1)]=="-":
+#     tablero1_marcar[(x1,y1)]="-"
+
+# print(f"Puntos del jugador 1: {num_x_1}\n\n")
+# print("Radar del jugador 2:")
+# imprimir_tablero_color(tablero1_marcar)
+
+# if sum(dict_barcos_j2.values())==0:
+#     break

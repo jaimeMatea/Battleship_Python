@@ -27,7 +27,7 @@ def menu():
         
     [2] ❌ SALIR DEL JUEGO
 
-    \x1B[3m-Escribe la palabra 'salir' al escribir una coordenada-\x1B[0m
+    \x1B[3m-Escribe la palabra 'salir' al escribir una coordenada para salir de la partida y volver al menu-\x1B[0m
     """)
     entrada=int(input(""))
     print("\n")
@@ -41,10 +41,10 @@ def comprueba_coordenada_x(x1,jugador1,tablero1):
     while int(x1)>tablero1.shape[0] or int(x1)<1:
         x1=int(x1)
         if x1>tablero1.shape[0]:
-            print(f"Demasiado alto, introduce un número en la coordenada x entre 1 y {tablero1.shape[0]}, prueba otra vez")
+            print(f"Demasiado alto, introduce un número en la coordenada x entre 1 y {tablero1.shape[0]}, prueba otra vez\n")
             x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
         elif x1<1:
-            print(f"Demasiado bajo, introduce un número en la coordenada x entre 1 y {tablero1.shape[0]}, prueba otra vez")
+            print(f"Demasiado bajo, introduce un número en la coordenada x entre 1 y {tablero1.shape[0]}, prueba otra vez\n")
             x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
     return x1
 
@@ -56,10 +56,10 @@ def comprueba_coordenada_y(y1,jugador1,tablero1):
     while int(y1)>tablero1.shape[1] or int(y1)<1:
         y1=int(y1)
         if y1>tablero1.shape[1]:
-            print(f"Demasiado alto, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez")
+            print(f"Demasiado alto, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez\n")
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
         elif y1<1:
-            print(f"Demasiado bajo, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez")
+            print(f"Demasiado bajo, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez\n")
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
     return y1
 
@@ -124,16 +124,14 @@ def crea_barco_aleatorio_j1(tablero,eslora,dict_barcos,jugador):
         print(f"Coloca el barco --> {nombre_barco}")
         try:
             fila=int(input(f"{jugador}, introduce la fila inicial (1 al {tablero.shape[0]}): "))-1
-            # if fila=="salir":
-            #     return "salir"
             columna=int(input(f"{jugador}, introduce la columna inicial (1 al {tablero.shape[1]}): "))-1
         except ValueError:
-            print("El numero es incorrecto, introduce uno válido")
+            print("El numero es incorrecto, introduce uno válido\n")
             continue
 
         orientacion=input("Introduce la orientación (N / S / E / O): ").strip().upper()
         if orientacion not in ["N","S","E","O"]:
-            print("La orientación no es correcta. Debe ser N, S, E u O")
+            print("La orientación no es correcta. Debe ser N, S, E u O\n")
             continue
 
         barco=[]
@@ -158,7 +156,7 @@ def crea_barco_aleatorio_j1(tablero,eslora,dict_barcos,jugador):
             imprimir_tablero_color(tablero_temp)
             return tablero_temp,barco
         else:
-            print("El barco se sale del mapa o choca con otro barco, prueba otra vez")
+            print("El barco se sale del mapa o choca con otro barco, prueba otra vez\n")
 
 
 def recibir_disparo(tablero,coordenada,dict_barcos,barcos,jugador):
@@ -197,24 +195,3 @@ def recibir_disparo(tablero,coordenada,dict_barcos,barcos,jugador):
         tablero[coordenada]="-"
         print("Agua")
         return True
-
-
-
-
-
-
-
-# elif str(x1)=="":
-#     print("Ningun valor introducido, introduce un número en la coordenada x entre 1 y 10, prueba otra vez")
-#     x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al 10): ")
-# elif x1.isalpha:
-#     print("El caracter no se admite, prueba otra vez")
-#     x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al 10): ")
-
-
-# elif str(y1)=="":
-#     print("Ningun valor introducido, introduce un número en la coordenada y entre 1 y 10, prueba otra vez")
-#     y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al 10): ")
-# elif y1.isalpha:
-#     print("El caracter no se admite, prueba otra vez")
-#     y1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al 10): ")
