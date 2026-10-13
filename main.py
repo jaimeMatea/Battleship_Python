@@ -20,6 +20,7 @@ def iniciar():
         dict_barcos_j2={"Destructor (size 2)":0, "Acorazado (size 3)":0, "Portaaviones (size 4)":0}
 
         jugador1=input("Introduce tu nombre, jugador 1: ")
+        print("\n")
         jugador2="Jugador 2"
 
         barcos_j1=[]
@@ -139,9 +140,9 @@ def iniciar():
         
         
         if sum(dict_barcos_j2.values())==0:
-            print(f"{jugador1} ha ganado\n")
+            print(f"¡{jugador1} ha ganado!\n")
         if sum(dict_barcos_j1.values())==0:
-            print("Jugador 2 ha ganado\n")
+            print("¡Jugador 2 ha ganado!\n")
 
         time.sleep(2)
         menu_salida=menu()
@@ -154,6 +155,8 @@ def iniciar():
 
 if __name__ == "__main__":
     iniciar()
+
+
 
 
 
