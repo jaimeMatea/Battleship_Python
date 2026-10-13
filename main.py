@@ -32,8 +32,7 @@ def iniciar():
             barco_eslora=[i,barco1]
             barcos_j1.append(barco_eslora)
         time.sleep(3)
-        #os.system("cls")
-        os.system("cls" if os.name == "nt" else "clear")
+        #os.system("cls" if os.name == "nt" else "clear")
 
         # Creación barcos iniciales j2
         for i in esloras:
@@ -52,8 +51,6 @@ def iniciar():
 
         while True:
             print(f"""\n⚔️   TURNO DE {jugador1.upper()} ⚔️\n**********************""")
-            #imprimir_tablero_color(tablero2)
-
             x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
             x1=comprueba_coordenada_x(x1,jugador1,tablero1)
             if x1=="salir":
@@ -104,7 +101,7 @@ def iniciar():
                 tablero1_marcar[(x1-1,y1-1)]="-"
                     
             print(f"Puntos de {jugador1}: {num_x_1}")
-            print("Radar del jugador 2:")
+            print("Radar del tablero del jugador 2:")
             imprimir_tablero_color(tablero1_marcar)
 
             if sum(dict_barcos_j2.values())==0:
@@ -113,7 +110,6 @@ def iniciar():
             
 
             time.sleep(2)
-            #os.system("cls")
 
 
         
@@ -139,8 +135,7 @@ def iniciar():
                 break
 
             time.sleep(3)
-            #os.system("cls")
-            os.system("cls" if os.name == "nt" else "clear")
+            #os.system("cls" if os.name == "nt" else "clear")
         
         
         if sum(dict_barcos_j2.values())==0:
