@@ -2,8 +2,7 @@ import numpy as np
 import time
 import random
 import os
-from utils import (crea_barco_aleatorio,recibir_disparo,comprueba_coordenada_x,comprueba_coordenada_y\
-                   ,menu,imprimir_tablero_color,crea_barco_aleatorio_j1)
+from utils import *
 
 def iniciar():
 
@@ -73,13 +72,10 @@ def iniciar():
     
             while disparo_j1==False and (tablero2[x1-1,y1-1]=="X" or tablero2[x1-1,y1-1]=="-"):
                 x1=input(f"{jugador1}, introduce la coordenada x del barco que quieres derribar (numero del 1 al {tablero1.shape[0]}): ")
-                x1=comprueba_coordenada_x(x1,jugador1,tablero1)
-                print("\n")
                 if x1=="salir":
                     break
                 y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
                 y1=comprueba_coordenada_y(y1,jugador1,tablero1)
-                print("\n")
                 if y1=="salir":
                     break
                 if x1!="salir" or y1!="salir":
@@ -155,6 +151,11 @@ def iniciar():
 
 if __name__ == "__main__":
     iniciar()
+
+
+
+
+
 
 
 

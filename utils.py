@@ -56,10 +56,10 @@ def comprueba_coordenada_y(y1,jugador1,tablero1):
     while int(y1)>tablero1.shape[1] or int(y1)<1:
         y1=int(y1)
         if y1>tablero1.shape[1]:
-            print(f"Demasiado alto, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez\n")
+            print(f"Demasiado alto, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez")
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
         elif y1<1:
-            print(f"Demasiado bajo, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez\n")
+            print(f"Demasiado bajo, introduce un número en la coordenada y entre 1 y {tablero1.shape[1]}, prueba otra vez")
             y1=input(f"{jugador1}, introduce la coordenada y del barco que quieres derribar (numero del 1 al {tablero1.shape[1]}): ")
     return y1
 
@@ -111,7 +111,7 @@ def crea_barco_aleatorio(tablero,eslora,dict_barcos):
             pieza=(fila,columna)
             barco.append(pieza)
         tablero_temp = coloca_barco_plus(tablero, barco)
-        if type(tablero_temp) == np.ndarray:
+        if type(tablero_temp)==np.ndarray:
             dic_barcos(dict_barcos,barco)
             return tablero_temp,barco
 
@@ -162,7 +162,7 @@ def crea_barco_aleatorio_j1(tablero,eslora,dict_barcos,jugador):
 def recibir_disparo(tablero,coordenada,dict_barcos,barcos,jugador):
     if tablero[coordenada]=="O":
         tablero[coordenada]="X"
-        print(f"Tocado, en la coordenada {coordenada}")
+        print(f"\nTocado, en la coordenada {coordenada}")
         for i in barcos:
             eslora_antigua=i[0]
             coordenadas_antiguas=i[1]
@@ -185,13 +185,13 @@ def recibir_disparo(tablero,coordenada,dict_barcos,barcos,jugador):
         return True
     elif tablero[coordenada]=="X":
         if jugador!="Jugador 2":
-            print("Ese barco ya ha sido golpeado en ese sitio, prueba otra vez")
+            print("\nEse barco ya ha sido golpeado en ese sitio, prueba otra vez\n")
             return False
     elif tablero[coordenada]=="-":
         if jugador!="Jugador 2":
-            print("Esa casilla de mar ya ha sido golpeada en ese sitio. prueba otra vez")
+            print("\nEsa casilla de mar ya ha sido golpeada en ese sitio. prueba otra vez\n")
             return False
     else:
         tablero[coordenada]="-"
-        print("Agua")
+        print("\nAgua")
         return True
